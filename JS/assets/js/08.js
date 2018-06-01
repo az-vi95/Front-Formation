@@ -161,3 +161,9 @@ if( connexion(emailUser, mdpUser) ) {
 
 
 
+
+    if( connexion(MailUser, MdpUser) ) {
+        alert('Bienvenue ' );
+    } else {
+        alert('ATTENTION, email / mot de passe incorrect.');
+    }

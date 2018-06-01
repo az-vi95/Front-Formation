@@ -33,7 +33,7 @@ var AnnuaireDesApprenants = [
 ];
 
 console.log(AnnuaireDesApprenants);
-console.clear();
+
 
 // - Exemple avec un tableau 3D 
 
