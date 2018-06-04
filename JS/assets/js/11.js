@@ -9,7 +9,7 @@
 
 II. Afficher sur la page (à l'aide de document.write) pour chaque étudiant, la liste (ul et li) 
 de sa moyenne à chaque matière, puis sa moyenne générale. 
-*/
+
 
 // -- Les Flemards.js
 function l(e) {
@@ -18,9 +18,6 @@ function l(e) {
 function w(e) {
     document.write(e);
 }
-
-
-
 
 
 
@@ -78,8 +75,8 @@ var PremierTrimestre = [
 
 
 ];
-console.log(PremierTrimestre);
-console.log(PremierTrimestre[4].prenom);
+*/
+
 
 
 
@@ -164,4 +161,58 @@ var PremierTrimestre = [
         }
     }
 ];
+
+
+
+// -- Je souhaite afficher la liste de mes étudiants.
+
+// -- Créer une boucle pour parcourir mes étudiants.
+w('<ol>');
+    for( let i = 0 ; i < PremierTrimestre.length ; i++ ) {
+
+        let Etudiant = PremierTrimestre[i];
+        l(Etudiant);
+
+        var NombreDeMatieres = 0, SommesDesNotes = 0;
+
+            w('<li>');
+                w(Etudiant.prenom + ' ' + Etudiant.nom);
+                w('<ul>');
+                    for( let matiere in Etudiant.matieres ) {
+                        l(matiere);
+
+                        NombreDeMatieres++;
+                        SommesDesNotes += Etudiant.matieres[matiere];
+
+                        w('<li>');
+                            w(matiere + ' : ' + Etudiant.matieres[matiere]);
+                        w('</li>');
+                    } // -- Fin de la boucle matière
+
+                    w('<li>');
+                        w('<strong>Moyenne Générale : </strong>' + 
+                            ( SommesDesNotes / NombreDeMatieres ).toFixed(2) );
+                    w('</li>');
+
+                w('</ul>');
+            w('</li><br>');
+
+        l('---');  
+    } // -- Fin de la boucle Etudiant
+w('</ol>');
+
+/*
+
+w("<ol>") 
+for ( let i=0 ; i < PremierTrimestre.length ; i++ ) {
+     w(  "<li><strong>" + PremierTrimestre[i].prenom + " " + PremierTrimestre[i].nom + "</li></strong>" ); 
+     w("<ul>")
+ for ( let i=0 ; i < PremierTrimestre.length ; i++ ) {
+    w( "<li>" + PremierTrimestre[i].matieres + "</li>");
+ } 
+w("</ul>");
+
+}
+
+ w("</ol>"); */
 
